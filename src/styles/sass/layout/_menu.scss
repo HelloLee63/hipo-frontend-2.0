@@ -1,0 +1,28 @@
+.menu-item {
+  display: block; 
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: rgb(169, 224, 19);
+}
+
+.menu-item-active {
+  background-color: rgb(169, 224, 19);
+}
+
+.menu-title {
+  display: flex;
+  align-items: center;
+  color: rgb(224, 30, 30);
+}
+
+.menu-title:hover {
+  color: rgb(224, 30, 30);
+}
+
+.menu-title:link {
+  text-decoration: none;
+}
