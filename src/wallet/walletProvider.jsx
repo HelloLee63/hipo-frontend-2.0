@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, createContext, useCallback, useRef, useContext } from "react";
 import { useSessionStorage } from "react-use-storage";
 import { UnsupportedChainIdError, Web3ReactProvider, useWeb3React } from '@web3-react/core';
-import { NoEthereumProviderError } from '@web3-react/injected-connector';
+import { NoEthereumProviderError, UserRejectedRequestError } from '@web3-react/injected-connector';
 import BigNumber from 'bignumber.js';
 import { ethers } from 'ethers';
 import Web3 from 'web3';
@@ -12,6 +12,7 @@ import { InvariantContext } from "../helpers/context";
 import ConnectWalletModal from "./components/connect-wallet-modal/ConnectWalletModal";
 import InstallMetaMaskModal from "./components/install-wallet-modal/InstallWalletModal";
 import UnsupportedChainModal from "./components/unsupported-chain-modal/UnsupportedChainModal";
+import UserRejectedModal from "../web3/components/user-rejected-modal/UserRejectedModal";
 
 export const WalletConnectors = [
   MetamaskWalletConfig,
@@ -45,6 +46,7 @@ const Web3WalletProvider = props => {
   const [connectWalletModal, setConnectWalletModal] = useState(false)
   const [installMetaMaskModal, setInstallMetaMaskModal] = useState(false)
   const [unsupportedChainModal, setUnsupportedChainModal] = useState(false);
+  const [userRejectedModal, setUserRejectedModal] = useState(false);
   
   const preConnectedAccount = useRef(web3React.account)
 
@@ -83,6 +85,9 @@ const Web3WalletProvider = props => {
           
         } else if (error instanceof UnsupportedChainIdError) {
           setUnsupportedChainModal(true)
+          disconnect()
+        } else if (error instanceof UserRejectedRequestError) {
+          setUserRejectedModal(true)
           disconnect()
         } else {
           const err = walletConfig.onError?.(error)
@@ -214,6 +219,11 @@ const Web3WalletProvider = props => {
       {connectWalletModal && <ConnectWalletModal onCancel={() => setConnectWalletModal(false)}/>}
       {installMetaMaskModal && <InstallMetaMaskModal onCancel={() => setInstallMetaMaskModal(false)} />}
       {unsupportedChainModal && <UnsupportedChainModal onCancel={() => setUnsupportedChainModal(false)} />}
+      {userRejectedModal && <UserRejectedModal
+        errorText='You rejected the request.'
+        buttonText='Dismiss'
+        onCancel={() => setUserRejectedModal(false)}
+      />}
     </Context.Provider>
   )
 }

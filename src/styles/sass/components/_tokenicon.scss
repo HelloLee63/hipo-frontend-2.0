@@ -8,7 +8,6 @@
   border: 1px solid #CCCCCC;
   border-radius: 8px;
   width: 11rem;
-  // flex: auto;
 
   .token-icon-symbol {
     font-family: PingFangSC-Medium, PingFang SC;
@@ -17,7 +16,6 @@
   }
 
   &:hover {
-    background-color: #202020;
     border-radius: 8px;
     border: 1px solid #FF257B;
   }

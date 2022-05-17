@@ -1,25 +1,32 @@
 .menu-item-custom {
-  display: block; 
+  // display: block; 
   padding: 0.75rem;
   margin: 0px 3px 0px 3px;
-  border-radius: 5px;
+  border-radius: 0px;
   cursor: pointer;
+  border-bottom: 2px solid #ff257c00;
+  // border-bottom: #FF257B;
+  color: #D5D7E4;
 }
 
 .menu-item-custom:hover {  
-  background-color: #171717;
-  color: #FF257B;
+  // background-color: #171717;
+  // color: #D5D7E4;
+  color: #ffffff;
+  border-bottom: 2px solid #ff257c;
 }
 
-.menu-item-active {  
-  background-color: #171717;
-  color: #FF257B;
+.menu-item-active {
+  // border-radius: 5px;  
+  // background-color: #171717;
+  color: #ffffff;
+  border-bottom: 2px solid #ff257c;
 }
 
 .menu-title-custom {
   display: flex;
   align-items: center;
-  color: #D5D7E4;
+  // color: #D5D7E4;
   font-family: YuKyokasho Yoko Bold;
   font-size: 1.15rem;
   font-weight: bold;

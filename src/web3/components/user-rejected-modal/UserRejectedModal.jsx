@@ -1,28 +1,27 @@
-// import Modal from '../../../components/antd/modal';
 import Modal from '../../../components/antd/modal/Modal';
-// import Icon from '../../../components/custom/icon';
-// Modal
-// Icon
-
 
 const UserRejectedModal = props => {
   const { ...modalProps } = props;
 
   return (
-    <Modal width={315} {...modalProps}>    
-      <div className="flex flow-row">
-        <div className="flex flow-row align-center mb-32">
-          <img alt='' name="warning-outlined" width={40} height={40} color="red" className="mb-16" />
-          <span type="h3" weight="semibold" color="primary" className="mb-8">
-            Error
-          </span>
-          <span type="p2" weight="semibold" color="secondary">
-            Transaction rejected
-          </span>
+    <Modal width={420} {...modalProps}>
+      <div className="d-flex flex-column user-rejected-modal">        
+        <div className="modal-title pb-10">
+          Error
+        </div>        
+        <div className="d-flex align-items-center justify-content-center">
+          <i className="bi bi-exclamation-circle warning-icon pt-8 pb-8"></i>
         </div>
-        <button className="button-primary" onClick={modalProps.onCancel}>
-          Dismiss
-        </button>
+        
+        <div className="d-flex align-items-center justify-content-center warning-text p-7">
+          {props.errorText}
+        </div>
+
+        <div className="d-flex align-items-center justify-content-center modal-button pt-10 pb-10">
+          <a type="button" className='btn install-wallet-modal-button' onClick={props.onCancel}>
+            {props.buttonText}
+          </a>
+        </div>
       </div>
     </Modal>
   );

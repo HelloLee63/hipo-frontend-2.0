@@ -8,7 +8,7 @@ const Topbar = () => {
   return (
     <div className='d-flex align-items-stretch flex-shrink-0'>
       <div className='topbar d-flex align-items-stretch flex-shrink-0'>
-        <div className={clsx('d-flex align-items-center d-none d-lg-block', toolbarButtonMarginClass)}>         
+        <div className={clsx('d-flex align-items-center', toolbarButtonMarginClass)}>         
           <ConnectNetworkButton />
         </div>
         
