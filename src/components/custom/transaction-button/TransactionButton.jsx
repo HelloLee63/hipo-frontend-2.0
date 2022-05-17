@@ -68,10 +68,6 @@ const TransactionButton = ({ pool, title, value, walletBalance }) => {
     }
   }, [isEnabling])
 
-  function handleClick() {
-    console.log('Pledge is executed');
-  }
-
   async function handleApprove() {
 
     if(wallet.account) {
@@ -123,7 +119,7 @@ const TransactionButton = ({ pool, title, value, walletBalance }) => {
 
   return (
     <div className="transaction-button">
-      <div type='button'  onClick={handleClick} className="btn btn-transaction btn-lg">{title}</div>
+      <div type='button' onClick={handleClick} className="btn btn-transaction btn-lg">{title}</div>
     </div>    
   )
 }
