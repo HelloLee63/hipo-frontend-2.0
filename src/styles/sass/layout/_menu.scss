@@ -1,28 +1,30 @@
-.menu-item {
+.menu-item-custom {
   display: block; 
-  padding: 0.5rem;
+  padding: 0.75rem;
+  margin: 0px 3px 0px 3px;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.menu-item:hover {
-  background-color: rgb(169, 224, 19);
+.menu-item-custom:hover {  
+  background-color: #171717;
+  color: #FF257B;
 }
 
-.menu-item-active {
-  background-color: rgb(169, 224, 19);
+.menu-item-active {  
+  background-color: #171717;
+  color: #FF257B;
 }
 
-.menu-title {
+.menu-title-custom {
   display: flex;
   align-items: center;
-  color: rgb(224, 30, 30);
+  color: #D5D7E4;
+  font-family: YuKyokasho Yoko Bold;
+  font-size: 1.15rem;
+  font-weight: bold;
 }
 
-.menu-title:hover {
-  color: rgb(224, 30, 30);
-}
-
-.menu-title:link {
+.menu-title-custom:link {
   text-decoration: none;
 }

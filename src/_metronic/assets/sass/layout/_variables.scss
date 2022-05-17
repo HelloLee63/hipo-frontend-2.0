@@ -12,13 +12,17 @@ $page-bg: if(isDarkMode(), #151521, $gray-100) !default;
 
 // Page background image height
 $page-bg-image-height: (
-  desktop: 350px,
-  tablet-and-mobile: 200px,
+  // desktop: 350px,
+  // tablet-and-mobile: 200px,
+  desktop: 100%,
+  tablet-and-mobile:100%,
 ) !default;
 
 $page-bg-image-height-lg: (
-  desktop: 530px,
-  tablet-and-mobile: 450px,
+  // desktop: 530px,
+  // tablet-and-mobile: 450px,
+  desktop: auto,
+  tablet-and-mobile:auto,
 ) !default;
 
 // Content Spacing

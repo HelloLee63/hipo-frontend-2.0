@@ -1,0 +1,27 @@
+.connect-network-modal {
+    .modal-title {
+      font-size: 1.71rem;
+      font-family: Arial-BoldMT, Arial;
+      font-weight: normal;
+      color: #FFFFFF;
+      line-height: 36px;
+    }
+
+    .wallet-icon {
+      width: 150px;
+      height: 160px;
+      border-radius: 12px;
+      border: 2px solid #ff257c00;
+    }
+
+    .wallet-icon:hover {
+      background: #202020;
+      box-shadow: 0px 0px 10px 0px rgba(255, 172, 209, 0.6);
+      border-radius: 12px;
+      border: 2px solid #FF257B;
+      cursor: pointer;
+    }
+    .wallet-name {
+      font-size: 1.43rem;
+    }
+}

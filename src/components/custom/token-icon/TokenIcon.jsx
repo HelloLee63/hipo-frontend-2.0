@@ -1,22 +1,20 @@
-import React from 'react'
-
 const TokenIcon = props => {
-  const { tokenIcon, tokenSymbol, tokenName, iconSize } = props;
+  const { tokenIcon, tokenSymbol } = props;
 
   return (
-    <div className='d-flex align-items-center justify-content-between'>
+    <div className='d-flex align-items-center justify-content-center token-icon d-inline mx-1 my-2'>
       <div className='d-flex align-items-center'>
-        <div>
-          {/* <img alt='' src='/media/tokens/DAI.svg' /> */}
-          <img alt='' src={ tokenIcon } />
+        <div>          
+          <img alt='' src={ tokenIcon } className='h-20px'/>
         </div>
-        <div className='d-flex flex-column justify-content-start ps-2'>
-          <div className='' style={{fontFamily: 'PingFangSC-Semibold', color: '#333333'}}>
+        <div className='d-flex flex-column justify-content-start ps-1'>
+          <div className='token-icon-symbol'>
             { tokenSymbol }
           </div>
-          <span className='d-block' style={{fontFamily: 'PingFangSC-Semibold', color: '#666666'}}>
+          {/* <span className='fs-8' style={{fontFamily: 'PingFangSC-Semibold', color: '#666666'}}>
             { tokenName }
-          </span>
+            Dai Stablecoin
+          </span> */}
         </div>
       </div>
     </div>

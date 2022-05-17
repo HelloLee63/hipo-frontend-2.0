@@ -1,0 +1,36 @@
+.liquidity-pool-apy {
+  .a-box {
+    text-align: center;
+  }
+  
+  .img-container {
+      height: 160px;
+      width: 160px;
+      display: inline-block;
+
+  }
+  
+  .img-container img {
+    height: 80px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 7px;
+    border-color: white;
+  }
+  
+  .text-container {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+    padding: 40px 20px 20px 20px;
+    border-radius: 20px;
+    background: #fff;
+    margin: -120px 0px 0px 0px;
+    line-height: 19px;
+    font-size: 14px;
+  }
+  
+  .text-container h3 {
+    // margin: 20px 0px 10px 0px;
+    color: #04bcff;
+    font-size: 18px;
+  }
+}

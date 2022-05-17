@@ -9,10 +9,8 @@ import './_metronic/assets/sass/style.react.scss'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+root.render(  
+  <App />
 );
 
 reportWebVitals();

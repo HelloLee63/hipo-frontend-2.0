@@ -1,0 +1,55 @@
+.topbar {
+  .wallet-button {
+    // background-image: url('./background-connectwallet.png');
+
+    width: 12.2rem;
+    height: 3rem;
+    background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
+    // background: linear-gradient(90deg, #FFDAE8, #E6E5FF);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: normal;
+    color: #FF257B;
+    line-height: 21px;
+    transition: 0.2s;
+
+    &:hover {
+      color: white;
+      background: linear-gradient(90deg, #FF257B, #FF257B);
+    }
+
+    &:active {
+      color: white;
+      background: linear-gradient(90deg, #DC1B67, #DC1B67);
+      transform: scale(0.9);
+    }
+  }
+
+  .wallet-connected {
+    color: #666666;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    background-color: rgba(#E8EDFF, 0.3);
+    font-weight: 600;
+    line-height: 21px;
+    
+    &:hover {
+      color: #666666;
+      background-color: #E8EDFF;
+    }  
+  };
+
+  .wallet-connect-button-icon {
+    color: #FF257B;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &:hover {
+      color: white;
+    };
+
+    &:active {
+      color: white;
+    }
+  }
+}

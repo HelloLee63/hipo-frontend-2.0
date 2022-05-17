@@ -1,0 +1,42 @@
+//
+// network-button
+//
+@import './buttons';
+
+// Base
+.modal-button {
+
+  display: flex;
+  padding: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .btn.btn-modal {
+    @include button-custom-variant(
+      $color: white,
+      $icon-color: #fff,
+      $border-color: null,
+      // $bg-color: rgba(0, 0, 0, 0.31),
+      $bg-color:rgba(255, 37, 123, 1),
+      $color-active: null,
+      $icon-color-active: #fff,
+      $border-color-active: null,
+      $bg-color-active: #003EFF
+    );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 24px;
+      width: 40%;
+      border-radius: 8px;
+      border-style: solid;
+      border: 2px solid;
+      border-color: rgba(255, 37, 123, 1);
+      border-image: linear-gradient(122deg, rgba(255, 37, 123, 1), rgba(103, 120, 238, 1)) 2 2;
+      transition: background-color 0.4s;
+  }
+}

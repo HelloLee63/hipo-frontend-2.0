@@ -1,5 +1,30 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .transaction-info-text1 {
-  color: blue;
-  font-size: 22px;
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  padding: 0.5rem;
+  justify-content: start;
+  color: #BCBCBC;
+  font-size: 1rem;
+  // font-family: Arial-Black, Arial;
+  // font-family: 'Poppins', sans-serif;
+  font-family: ArialMT;
+  // font-weight: 600;
+  // line-height: 23px;
+  // width: 476px;
+  // height: 56px;
+  background: rgba(42, 42, 42, 0.79);
+  border-radius: 8px;
+}
+
+
+
+.transaction-info-text2 {
+  display: flex;
+  justify-content: center;
+  color: #666666;
+  font-size: 12px;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  line-height: 17px;
 }

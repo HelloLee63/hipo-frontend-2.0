@@ -1,33 +1,46 @@
-import MaxButton from "./components/custom/max-button/MaxButton";
-import TokenAmountLable from "./components/custom/token-amount-lable/TokenAmountLable";
-import TokenIcon from "./components/custom/token-icon/TokenIcon";
-import TransactionFormCard from "./components/custom/transaction-form-card/TransactionFormCard";
-import TransactionInfo from "./components/custom/transaction-info/TransactionInfo";
-import { Header } from "./layout/components/header/Header";
-import { HeaderWrapper } from "./layout/components/header/HeaderWrapper";
+import GeneralProvider from "./components/provider/generalProvider";
+import KnownTokensProvider from "./components/provider/knownTokensProvider";
+import PoolsProvider from "./components/provider/poolsProvider";
+import { LayoutProvider } from "./layout/core";
+import { MasterInit } from "./layout/MasterInit";
+import ConfigProvider from "./network/configProvider";
+import NetworkProvider from "./network/networkProvider";
 import AppRouters from "./routing/AppRouters";
-
+import WalletProvider from "./wallet/walletProvider";
+import ProtocolDataProvider from "./web3/components/providers/ProtocolDataProvider";
+import WalletDataProvider from "./web3/components/providers/WalletDataProvider";
+import ContractManagerProvider from "./web3/contractManagerProvider";
+import Web3Provider from "./web3/web3Provider";
 
 function App() {
+  
   return (
     <>
-      <AppRouters />
-    </>
-    // <div>
-    //   Hipo: Decentralized Fixed Interest Protocol
-    //   <TokenIcon   
-    //     tokenIcon = '/media/tokens/DAI.svg'
-    //     tokenSymbol = 'DAI'
-    //     tokenName = 'Dai Stablecoin'
-    //     iconSize = '2'/>
-    //   <TransactionFormCard />
-    //   <MaxButton />
-    //   <TransactionInfo />
-    //   <TokenAmountLable amount='300' valueInUsDollar='2000' />
-    //   <AppRouters />
-    //   <TransactionInfo text1='How much' text2='please click the button' />
-    //   <HeaderWrapper />
-    // </div>
+      <GeneralProvider>
+        <LayoutProvider>
+          <NetworkProvider>
+            <ConfigProvider>
+              <WalletProvider>
+                <Web3Provider>
+                  <ContractManagerProvider>
+                    <KnownTokensProvider>
+                      <PoolsProvider>
+                        <ProtocolDataProvider>
+                          <WalletDataProvider>
+                            <AppRouters />
+                          </WalletDataProvider>
+                        </ProtocolDataProvider>
+                      </PoolsProvider>
+                    </KnownTokensProvider>
+                  </ContractManagerProvider>
+                  <MasterInit />
+                </Web3Provider>
+              </WalletProvider>
+            </ConfigProvider>
+          </NetworkProvider>
+        </LayoutProvider>
+      </GeneralProvider>  
+    </>    
   );
 }
 

@@ -1,0 +1,69 @@
+.custom-navbar {
+  *,
+  *:after,
+  *:before {
+	box-sizing: border-box;
+}
+  .tabs {
+    display: flex;
+    position: relative;
+    background-color: #F1F1F1;
+    border: 1px solid #003EFF;
+    border-radius: 8px;
+    * {
+      z-index: 2;
+    }
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.75rem;
+    width: 10.125rem;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-size: 1.125rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+  
+  input[type="radio"] {
+    &:checked {
+      & + label {
+        color: white;
+      }
+    }
+  }
+  
+  input[id="radio-1"] {
+    &:checked {
+      & ~ .glider {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  input[id="radio-2"] {
+    &:checked {
+      & ~ .glider {
+        transform: translateX(100%);
+      }
+    }
+  }
+  
+  .glider {
+    position: absolute;
+    display: flex;
+    height: 2.75rem;
+    width: 10.125rem;
+    background-color: #003EFF;
+    z-index: 1;
+    border-radius: 6px;
+    transition: 0.25s ease-out;
+  }
+}

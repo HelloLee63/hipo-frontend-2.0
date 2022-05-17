@@ -1,8 +1,11 @@
-import React from 'react'
-
 const LendingModule = () => {
-  return (
-    <div>LendingModule</div>
+
+  console.log("LendingModule is rendered");
+  
+  return (    
+    <>
+      
+    </>    
   )
 }
 

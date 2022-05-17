@@ -1,0 +1,48 @@
+//
+// network-button
+//
+@import './buttons';
+
+// Base
+.transaction-button {
+
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .btn.btn-transaction {
+    @include button-custom-variant(
+      $color: white,
+      $icon-color: #fff,
+      $border-color: null,
+      $bg-color: #FF257B,
+      $color-active: null,
+      $icon-color-active: #fff,
+      $border-color-active: null,
+      $bg-color-active: #003EFF
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    border-radius: 8px;
+    width: 100%;
+    height: 3rem;
+    transition: background-color 5s;
+    
+  }
+
+  // Fixed header & NON sticky search modes
+  .active.show > .btn.btn-network {
+    color: #666666;
+    background-color:#003EFF;
+    i,
+    .svg-icon {
+      color: #fff;
+    }
+  }
+}

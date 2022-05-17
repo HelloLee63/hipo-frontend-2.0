@@ -1,17 +1,17 @@
-import React from 'react'
+import { useEffect } from 'react'
+import { SwapperComponent } from '../../../_metronic/assets/js/components/_SwapperComponent'
 import HeaderMenu from '../header-menu/HeaderMenu'
-// import {MenuInner} from './MenuInner'
-// import {SwapperComponent} from '../../../assets/ts/components'
 
 const Header = () => {
-//   useEffect(() => {
-//     SwapperComponent.reinitialization()
-//   }, [])
+
+  useEffect(() => {
+    SwapperComponent.reinitialization()
+  }, [])
 
   return (
     <div
       className='header-menu align-items-stretch'
-      // data-kt-drawer='true'
+      data-kt-drawer='true'
       data-kt-drawer-name='header-menu'
       data-kt-drawer-activate='{default: true, lg: false}'
       data-kt-drawer-overlay='true'
