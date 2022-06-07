@@ -42,7 +42,8 @@
       right: 0;
       left: 0;
       z-index: get($header-config, desktop, fixed, z-index);
-      background-color: get($header-config, desktop, fixed, bg-color);
+      // background-color: get($header-config, desktop, fixed, bg-color);
+      background-color: rgba(0, 0, 0, 0.9);
       box-shadow: get($header-config, desktop, fixed, box-shadow);
       height: get($header-config, desktop, fixed, height);
       border-bottom: get($header-config, desktop, fixed, border);
@@ -75,6 +76,7 @@
               $bullet-color: #9899ac,
               $arrow-color: #494b69,
               $bg-color: null,
+              
               $all-links: false
             );
 
@@ -128,6 +130,7 @@
 @include media-breakpoint-down(lg) {
   .header {
     display: flex;
+    direction: column;
     justify-content: space-between;
     align-items: stretch;
     height: get($header-config, tablet-and-mobile, default, height);
@@ -156,7 +159,9 @@
       z-index: get($header-config, tablet-and-mobile, fixed, z-index);
       height: get($header-config, tablet-and-mobile, fixed, height);
       min-height: get($header-config, tablet-and-mobile, fixed, height);
-      background-color: get($header-config, tablet-and-mobile, fixed, bg-color);
+      // background-color: get($header-config, tablet-and-mobile, fixed, bg-color);
+      background-color: rgba(0, 0, 0, 0.9);
+      
       box-shadow: get($header-config, tablet-and-mobile, fixed, box-shadow);
       border-bottom: get($header-config, tablet-and-mobile, fixed, border);
 

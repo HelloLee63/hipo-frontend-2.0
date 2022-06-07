@@ -80,7 +80,10 @@ const ContractListener = props => {
   }, [])
 
   if (userRejectedVisible) {
-    return <UserRejectedModal onCancel={handleUserRejectedCancel} />
+    return <UserRejectedModal onCancel={handleUserRejectedCancel} 
+        errorText='You rejected the request.'
+        buttonText='Dismiss'
+      />
   }
 
   if (txStatus.visible) {

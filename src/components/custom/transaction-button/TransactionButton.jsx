@@ -4,7 +4,7 @@ import { useConfig } from "../../../network/configProvider"
 import ConnectWalletButton from "../../../wallet/components/connect-wallet-button/ConnectWalletButton"
 import { useWallet } from "../../../wallet/walletProvider"
 
-const TransactionButton = ({ pool, title, value, walletBalance }) => {
+const TransactionButton = ({ pool, title, value, walletBalance, transaction, isWorking}) => {
 
   const wallet = useWallet()
   const config = useConfig()
@@ -61,12 +61,16 @@ const TransactionButton = ({ pool, title, value, walletBalance }) => {
   }, [wallet.account, value, walletBalance, allowance])
 
   useEffect(() => {
-    if(isEnabling) {
+    if(isEnabling || isWorking) {
       document.getElementById("cover").style.display = "flex";
     } else {
       document.getElementById("cover").style.display = "none";
     }
-  }, [isEnabling])
+  }, [isEnabling, isWorking])
+
+  function handleClick() {
+    transaction(true);
+  }
 
   async function handleApprove() {
 
@@ -101,7 +105,7 @@ const TransactionButton = ({ pool, title, value, walletBalance }) => {
   if (submitDisabledVisible) {
     return (
       <div className="transaction-button">
-        <div type='button' disabled className="btn btn-transaction btn-lg">{title}</div>
+        <div type='button' disabled className="btn btn-transaction-disabled btn-lg">{title}</div>
       </div>
     )
   }
@@ -111,8 +115,7 @@ const TransactionButton = ({ pool, title, value, walletBalance }) => {
       <div className="transaction-button">
         <div type='button' disabled className="btn btn-transaction btn-lg">
           <ConnectWalletButton />
-        </div>
-        
+        </div>        
       </div>
     )
   }

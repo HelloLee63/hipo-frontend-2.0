@@ -1509,6 +1509,7 @@ class FinancingPoolContract extends Web3Contract {
   }
 
   async pledge(collateralAsset, collateralAssetAmount) {
+	console.log(this.account);
     if (!this.account) {
       return Promise.reject()
     }

@@ -1,5 +1,5 @@
 //
-// network-button
+// transaction-button
 //
 @import './buttons';
 
@@ -20,24 +20,58 @@
       $color-active: null,
       $icon-color-active: #fff,
       $border-color-active: null,
-      $bg-color-active: #003EFF
+      $bg-color-active: null
     );
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: PingFangSC-Semibold, PingFang SC;
-    font-size: 14px;
-    font-weight: 600;
+    font-family: Arial-BoldMT, Arial;
+    font-size: 1rem;
+    font-weight: normal;
     line-height: 24px;
     border-radius: 8px;
     width: 100%;
     height: 3rem;
-    transition: background-color 5s;
+    transition: 0.3s;
+
+    &:active {
+      background: #FF5095;
+      box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+      transform: scale(0.95);
+    }
+
+    &:hover {
+      background: #FF5095;
+      box-shadow: 0px 0px 10px 0px rgba(255, 255, 255, 0.5);
+    }
     
   }
 
+  .btn.btn-transaction-disabled {
+    @include button-custom-variant(
+      $color: white,
+      $icon-color: #fff,
+      $border-color: null,
+      $bg-color: #666666,
+      $color-active: null,
+      $icon-color-active: #fff,
+      $border-color-active: null,
+      $bg-color-active: null
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial-BoldMT, Arial;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 24px;
+    border-radius: 8px;
+    width: 100%;
+    height: 3rem;
+  }
+
   // Fixed header & NON sticky search modes
-  .active.show > .btn.btn-network {
+  .active.show > .btn.btn-transaction {
     color: #666666;
     background-color:#003EFF;
     i,

@@ -31,50 +31,50 @@ class ProtocolDataContract extends Web3Contract {
   bondPrice
 
     async loadCollateralConfigurationData(collateralAssetAddress) {
-        const collateralConfigurationData = await this.call('getCollateralConfigurationData', [collateralAssetAddress])
-        this.collateralConfigurationData = collateralConfigurationData
+      const collateralConfigurationData = await this.call('getCollateralConfigurationData', [collateralAssetAddress])
+      this.collateralConfigurationData = collateralConfigurationData
 
-        const configuration = Object.values(this.collateralConfigurationData)
+      const configuration = Object.values(this.collateralConfigurationData)
+      
+      if(configuration) {
+        this.maxLtvMap.set(collateralAssetAddress, configuration[1])
         
-        if(configuration) {
-          this.maxLtvMap.set(collateralAssetAddress, configuration[1])
-          
-          this.thresholdMap.set(collateralAssetAddress, configuration[2])
-          
-          this.emit(Web3Contract.UPDATE_ACCOUNT)          
-        }        
+        this.thresholdMap.set(collateralAssetAddress, configuration[2])
+        
+        this.emit(Web3Contract.UPDATE_ACCOUNT)          
+      }        
     }
 
     async loadBondPrice(assetAddress, duration, hipoV1AMMfactory) {
-        const bondPrice = await this.call('getBondPrice', [assetAddress, duration, hipoV1AMMfactory])
-        this.bondPriceObject = {}
-  
-        if (bondPrice) {
-          this.bondPrice = bondPrice
+      const bondPrice = await this.call('getBondPrice', [assetAddress, duration, hipoV1AMMfactory])
+      this.bondPriceObject = {}
 
-          this.bondPriceObject.assetAddress = assetAddress
-          this.bondPriceObject.duration = duration.toString()
-          this.bondPriceObject.price = bondPrice
+      if (bondPrice) {
+        this.bondPrice = bondPrice
 
-          if (this.bondPriceArray.length === 0) {
+        this.bondPriceObject.assetAddress = assetAddress
+        this.bondPriceObject.duration = duration.toString()
+        this.bondPriceObject.price = bondPrice
+
+        if (this.bondPriceArray.length === 0) {
+          this.bondPriceArray.push(this.bondPriceObject)
+        } else {
+          const data = this.bondPriceArray.find(obj => obj.assetAddress === assetAddress && obj.duration === duration)
+
+          if(!data) {
             this.bondPriceArray.push(this.bondPriceObject)
           } else {
-            const data = this.bondPriceArray.find(obj => obj.assetAddress === assetAddress && obj.duration === duration)
-
-            if(!data) {
-              this.bondPriceArray.push(this.bondPriceObject)
-            } else {
-              for (let i = 0; i < this.bondPriceArray.length; i++) {
-                if (this.bondPriceArray[i].assetAddress === assetAddress && this.bondPriceArray[i].duration === duration) {
-                  this.bondPriceArray[i].price = bondPrice
-                }
+            for (let i = 0; i < this.bondPriceArray.length; i++) {
+              if (this.bondPriceArray[i].assetAddress === assetAddress && this.bondPriceArray[i].duration === duration) {
+                this.bondPriceArray[i].price = bondPrice
               }
             }
           }
-          // this.emit(Web3Contract.UPDATE_DATA)
         }
-        return this.bondPrice        
+        // this.emit(Web3Contract.UPDATE_DATA)
       }
+      return this.bondPrice        
+    }
 }
 
 export default ProtocolDataContract

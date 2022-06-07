@@ -1,0 +1,31 @@
+.card.supported-assets-card {
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  border: 2px solid rgba(163, 149, 187, 0.4);
+
+  .supported-assets-card-title {
+
+    font-size: 1.71rem;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 36px;
+  }
+
+  .supported-assets-card-symbol {
+
+    font-size: 1rem;
+    font-family: ArialMT;
+    color: #FFFFFF;
+    line-height: 24px;
+  }
+
+    &:hover {
+      border: 2px solid #FF257B;
+    }
+
+    &:active {
+      border: 2px solid #FF257B;
+    }
+  }

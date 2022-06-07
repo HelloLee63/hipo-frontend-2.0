@@ -5,12 +5,15 @@
 // Body
 body {
   background-color: $page-bg;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center top;
-  background-size: 100% get($page-bg-image-height, desktop);
+  // background-size: 100% get($page-bg-image-height, desktop);
+  background-size: cover;
 
   &.page-bg-image-lg {
-    background-size: 100% get($page-bg-image-height-lg, desktop);
+    // background-size: 100% get($page-bg-image-height-lg, desktop);
+    background-size: cover;
   }
 }
 

@@ -27,16 +27,26 @@
   }
 
   .wallet-connected {
-    color: #666666;
-    font-family: PingFangSC-Semibold, PingFang SC;
-    background-color: rgba(#E8EDFF, 0.3);
-    font-weight: 600;
+    width: 12.2rem;
+    height: 3rem;
+    background: #171717;
+    border-radius: 8px;
+    border: 2px solid #423D58 !important;
+    font-size: 1rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: normal;
+    color: #FFFFFF;
     line-height: 21px;
+    transition: 0.2s;
     
     &:hover {
-      color: #666666;
-      background-color: #E8EDFF;
-    }  
+      color: #FF257B;
+      background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);;
+    }
+    &:active {
+      background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
+      transform: scale(0.9);
+    } 
   };
 
   .wallet-connect-button-icon {

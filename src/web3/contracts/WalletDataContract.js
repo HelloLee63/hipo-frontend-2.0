@@ -6,68 +6,70 @@ const WalletDataProviderABI = [createAbiItem('getIssuerLtv', ['address', 'addres
 
 class WalletDataContract extends Web3Contract {
 
-    issuerLtvMap
     issuerLtvArray
-    issuerLtvObject
+
     issuerTotalDebtsObject
     issuerTotalDebtsArray
 
     constructor(address) {
-        super(WalletDataProviderABI, address, '')
-        this.issuerLtvMap = new Map()
-        this.issuerLtvArray = new Array()
-        this.issuerLtvObject = new Object()
-        this.issuerTotalDebtsObject = new Object()
-        this.issuerTotalDebtsArray = new Array()
+      super(WalletDataProviderABI, address, '')
 
-        this.on(Web3Contract.UPDATE_ACCOUNT, () => {
-            this.issuerLtvArray = []
-            this.issuerLtvObject = {}
-            this.emit(Web3Contract.UPDATE_DATA)
-        })
+      this.issuerLtvArray = new Array()
+
+      this.issuerTotalDebtsObject = new Object()
+      this.issuerTotalDebtsArray = new Array()
+
+      this.on(Web3Contract.UPDATE_ACCOUNT, () => {
+          this.issuerLtvArray = []
+          this.emit(Web3Contract.UPDATE_DATA)
+      })
     }
 
-    issuerLtv
     issuerTotalDebts
 
     getIssuerLtv(issuer = this.account, collateralAssetAddress) {
-        const ltv = issuer ? this.issuerLtvArray.find(
-            obj => obj.issuer === issuer &&
-                obj.collateralAssetAddress === collateralAssetAddress
-        ) : undefined
+      const ltv = issuer ? this.issuerLtvArray.find(
+          obj => obj.issuerAddress === issuer &&
+              obj.userCollateralAssetAddress === collateralAssetAddress
+      ) : undefined
 
-        return ltv
+      return ltv
     }
 
     async loadIssuerLtv(issuer, collateralAssetAddress) {
-        const issuerLtv = await this.call('getIssuerLtv', [issuer, collateralAssetAddress])
-        this.issuerLtvObject = {}
-        if (issuerLtv) {
-            this.issuerLtvObject.issuer = issuer
-            this.issuerLtvObject.collateralAssetAddress = collateralAssetAddress
-            this.issuerLtvObject.ltv = issuerLtv
 
-            if(this.issuerLtvArray.length === 0) {
-                this.issuerLtvArray.push(this.issuerLtvObject)
-            }
+      if (!issuer) {      
+        return Promise.reject(new Error('Invalid owner address!'));
+      }
 
-            this.issuerLtvArray.map((obj) => {
+      const issuerLtv = await this.call('getIssuerLtv', [issuer, collateralAssetAddress])
+      
+      if (issuerLtv) {
 
-                if(obj.issuer !== issuer || obj.collateralAssetAddress !== collateralAssetAddress) {
-
-                  this.issuerLtvArray.push(this.issuerLtvObject)
-                }
-    
-                if(obj.issuer === issuer && obj.collateralAssetAddress === collateralAssetAddress) {
-
-                  obj.ltv = issuerLtv
-                }              
-            })
-
-            this.issuerLtv = issuerLtv
-            this.emit(Web3Contract.UPDATE_DATA)
+        const result = {
+          issuerAddress: issuer,
+          userCollateralAssetAddress: collateralAssetAddress,
+          issuerLtvValue: issuerLtv
         }
-               
+
+        if(this.issuerLtvArray.length === 0) {
+          this.issuerLtvArray.push(result)
+        } else {
+          const value = this.issuerLtvArray.find(arr => (arr.issuerAddress === issuer && arr.userCollateralAssetAddress === collateralAssetAddress))
+
+          if (!value) {
+            this.issuerLtvArray.push(result)
+          } else {
+            for (let i = 0; i < this.issuerLtvArray.length; i++) {
+              if (this.issuerLtvArray[i].issuerAddress === issuer && this.issuerLtvArray[i].userCollateralAssetAddress === collateralAssetAddress) {
+                this.issuerLtvArray[i].issuerLtvValue = issuerLtv
+              }
+            }
+          }
+        }
+
+        this.emit(Web3Contract.UPDATE_DATA)
+      }               
     }
 
     async loadIssuerTotalDebts(issuer, collateralAssetAddress) {
@@ -105,6 +107,8 @@ class WalletDataContract extends Web3Contract {
                 }              
             })
         }
+
+        // console.log(this.issuerTotalDebtsObject);
 
         this.emit(Web3Contract.UPDATE_DATA)      
     }    

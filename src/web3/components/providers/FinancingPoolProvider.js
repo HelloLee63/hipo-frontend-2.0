@@ -1,8 +1,8 @@
 import { createContext, useContext } from "react";
-import { useConfig } from "../../../components/providers/configProvider";
-import { InvariantContext } from "../../../utils/context";
+import { InvariantContext } from "../../../helpers/context";
+import { useConfig } from "../../../network/configProvider";
+import { useContract } from "../../contractManagerProvider";
 import FinancingPoolContract from "../../contracts/FinancingPoolContract";
-import { useContract } from "../contractManagerProvider";
 
 function useFinancingPoolContract(address) {
     return useContract(address, () => {

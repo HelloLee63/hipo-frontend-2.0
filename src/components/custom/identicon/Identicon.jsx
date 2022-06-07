@@ -4,7 +4,7 @@ import { useMemo } from 'react'
 const EMPTY_ADDRESS = '000000000000000'
 
 const Identicon = props => {
-  const { address = EMPTY_ADDRESS, width = 24, height = 24, alt } = props
+  const { address = EMPTY_ADDRESS, width = 24, height = 24, alt, circle } = props
 
   const icon = useMemo(() => {
       return new IdenticonJs(address, {
@@ -18,7 +18,7 @@ const Identicon = props => {
       alt={alt ?? address}
       width={width}
       height={height}
-      style={{ borderRadius: '5px' }}
+      style={{ borderRadius: circle ? '50%' : '5px'}}
     />
   )
 }

@@ -1,3 +1,4 @@
+import { useState } from "react"
 import PromptInfoCard from "../../components/custom/prompt-info-card/PromptInfoCard"
 import RatesTable from "../../components/custom/rates-table/RatesTable"
 import PledgeForm from "./components/PledgeForm"
@@ -7,6 +8,7 @@ const Pledge = () => {
     title: "Pledge",
     info: "Hipo V1 allows borrowers to pledge with LPs Tokens from Uniswap V2 and take a loan with corresponding currencies. "
   }
+
   return (
     <>
       <div className='row align-items-start gy-5 g-xl-8 pt-15 justify-content-center'>        

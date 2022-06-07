@@ -9,42 +9,68 @@ const TxStatusModal = props => {
   const { activeNetwork } = useNetwork();
 
   return (
-    <Modal width={560} title="Transaction status" {...modalProps}>
-      <div className="grid flow-row pv-8 ph-8">
+    <Modal width={640} {...modalProps}>
+      <div className="d-flex flex-column tx-status-modal">        
+        <div className="modal-title">
+          Transaction status
+        </div>
+
         {state === 'progress' && (
           <>
-            <Icon name="tx-progress" width={180} height={160} className="mb-32 mh-auto" />
-            <span type="h3" weight="semibold" color="primary" className="mb-16 text-center">
+            <div className="d-flex justify-content-center pt-15">
+              <div className="spinner-border" style={{color: "#FF257B",width: "4rem", height: "4rem"}} role="status">
+                <span className="sr-only">Loading...</span>
+              </div>
+            </div>
+            <span className="d-flex justify-content-center modal-text pt-15">
               Your transaction is being processed ...
             </span>
-            <div className="mb-64">{renderProgress?.()}</div>
-            <ExplorerTxLink address={txHash} variation="primary" className="full-width">
-              View on {activeNetwork.explorer.name}
-            </ExplorerTxLink>
+            <div className="pt-10">{renderProgress?.()}</div>
+            <div className="d-flex justify-content-center pt-5 pb-10">
+              <ExplorerTxLink address={txHash} className="external-link full-width">
+                View on {activeNetwork.explorer.name}
+              </ExplorerTxLink>
+            </div>
           </>
         )}
+
         {state === 'success' && (
           <>
-            <Icon name="tx-success" width={180} height={160} className="mb-32 mh-auto" />
-            <span type="h3" weight="semibold" color="primary" className="mb-16 text-center">
+            <div className="d-flex align-items-center justify-content-center">
+              <i className="bi bi-check2-circle success-icon pt-8 pb-8"></i>
+            </div>
+            <span className="modal-text d-flex justify-content-center">
               Congratulations!
             </span>
-            <span type="small" weight="semibold" color="secondary" className="mb-16 text-center">
+            <span className="modal-text d-flex justify-content-center">
               Your transaction was successful.
             </span>
             {renderSuccess?.()}
+            <div className="d-flex justify-content-center pt-15">
+              <ExplorerTxLink address={txHash} className="external-link full-width">
+                View on {activeNetwork.explorer.name}
+              </ExplorerTxLink>
+            </div>
+            
+            <div className="d-flex align-items-center justify-content-evenly modal-button pt-10 pb-10">
+              <a type="button" className='btn install-wallet-modal-button' onClick={props.onCancel}>
+                Confirm
+              </a>
+            </div>
           </>
         )}
+
         {state === 'fail' && (
           <>
-            <Icon name="tx-failure" width={180} height={160} className="mb-32 mh-auto" />
-            <span type="h3" weight="semibold" color="primary" className="mb-16 text-center">
+            <div className="d-flex align-items-center justify-content-center">
+              <i className="bi bi-x-circle fail-icon pt-8 pb-8"></i>
+            </div>
+
+            <span className="modal-text d-flex justify-content-center">
               Failed!
             </span>
-            <span type="small" weight="semibold" color="secondary" className="mb-64 text-center">
-              Your transaction failed to execute.
-              <br />
-              Please try again.
+            <span className="modal-text d-flex justify-content-center">
+              Your transaction failed to execute.Please try again.
             </span>
             <button htmlType="submit" type="primary" onClick={props?.onCancel}>
               Dismiss
@@ -52,6 +78,7 @@ const TxStatusModal = props => {
           </>
         )}
       </div>
+      
     </Modal>
   );
 };

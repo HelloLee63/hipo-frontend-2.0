@@ -7,6 +7,7 @@ import ConfigProvider from "./network/configProvider";
 import NetworkProvider from "./network/networkProvider";
 import AppRouters from "./routing/AppRouters";
 import WalletProvider from "./wallet/walletProvider";
+import FinancingPoolProvider from "./web3/components/providers/FinancingPoolProvider";
 import ProtocolDataProvider from "./web3/components/providers/ProtocolDataProvider";
 import WalletDataProvider from "./web3/components/providers/WalletDataProvider";
 import ContractManagerProvider from "./web3/contractManagerProvider";
@@ -27,7 +28,9 @@ function App() {
                       <PoolsProvider>
                         <ProtocolDataProvider>
                           <WalletDataProvider>
-                            <AppRouters />
+                            <FinancingPoolProvider>
+                              <AppRouters />
+                            </FinancingPoolProvider>
                           </WalletDataProvider>
                         </ProtocolDataProvider>
                       </PoolsProvider>

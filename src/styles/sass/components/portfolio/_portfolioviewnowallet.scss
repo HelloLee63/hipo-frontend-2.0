@@ -1,0 +1,23 @@
+.portfolio-view-no-wallet {
+  .portfolio-view-no-wallet-title {
+    font-size: 2.58rem;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 44px;
+  }
+  .portfolio-view-no-wallet-description {
+
+    font-size: 1.71rem;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #BCBCBC;
+    line-height: 29px;
+  }
+  .support-asset {
+    display: flex;
+  }
+  .support-asset-card {
+    flex:1
+  }
+}

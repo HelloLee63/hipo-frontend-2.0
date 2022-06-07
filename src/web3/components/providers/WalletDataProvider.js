@@ -62,7 +62,7 @@ const WalletDataProvider = props => {
     (collateralAssetAddress) => {
       if (walletCtx.account) {
         return walletDataContract.issuerLtvArray?.find(obj => 
-          obj.issuer === walletCtx.account && obj.collateralAssetAddress === collateralAssetAddress
+          obj.issuerAddress === walletCtx.account && obj.userCollateralAssetAddress === collateralAssetAddress
         )
       }      
     }, [walletCtx.account, walletDataContract.issuerLtvArray])

@@ -10,7 +10,7 @@ const { activeNetwork } = useNetwork()
     <div         
       type="button" 
       onClick={() => showNetworkSelect()} 
-      className="btn btn-network d-flex align-items-center flex-shrink-0">  
+      className="btn-network d-flex justify-content-center align-items-center flex-shrink-0">  
       <img alt='' src={activeNetwork.meta.logo} className='h-25px pe-3' />
       <span>{activeNetwork.meta.name}</span>
     </div>

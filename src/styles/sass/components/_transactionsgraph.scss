@@ -1,0 +1,151 @@
+:root {
+  --square-size: 12px;
+  --square-gap: 3px;
+  --week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+ul li {
+  list-style-type: none;
+}
+
+rect {
+  outline: none !important;
+}
+
+.transaction-graph {
+  background: rgba(42, 42, 42, 0.79);
+  border-radius: 24px;
+  .months { grid-area: months; }
+  .days { grid-area: days; }
+  .squares { grid-area: squares; }
+  
+  .months {
+    display: grid;
+    grid-template-columns: calc(var(--week-width) * 4) /* Jan */
+                           calc(var(--week-width) * 4) /* Feb */
+                           calc(var(--week-width) * 4) /* Mar */
+                           calc(var(--week-width) * 5) /* Apr */
+                           calc(var(--week-width) * 4) /* May */
+                           calc(var(--week-width) * 4) /* Jun */
+                           calc(var(--week-width) * 5) /* Jul */
+                           calc(var(--week-width) * 4) /* Aug */
+                           calc(var(--week-width) * 4) /* Sep */
+                           calc(var(--week-width) * 5) /* Oct */
+                           calc(var(--week-width) * 4) /* Nov */
+                           calc(var(--week-width) * 5) /* Dec */;
+  }
+  
+  .days,
+  .squares {
+    display: grid;
+    grid-gap: var(--square-gap);
+    grid-template-rows: repeat(7, var(--square-size));
+  }
+  
+  .squares {
+    grid-auto-flow: column;
+    grid-auto-columns: var(--square-size);
+  }
+  
+  .graph {
+    padding: 1.5rem 0.4rem;
+    border: 1px solid #979797;
+    margin: 0rem 2.2rem;
+    background: rgba(42, 42, 42, 0.8);
+    border-radius: 24px;
+
+    font-size: 0.86rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 12px;
+  }
+  
+  .days li:nth-child(odd) {
+    visibility: hidden;
+  }
+  
+  .squares li {
+    background-color: #999999;
+    border-radius: 2px;
+  }
+
+  .squares li:hover {
+    border: 1px solid #ffffff;
+  }
+  
+  .squares li[data-level="1"] {
+    background-color: #FFE2ED;
+  }
+  
+  .squares li[data-level="2"] {
+    background-color: #FFBAD6;
+  }
+  
+  .squares li[data-level="3"] {
+    background-color: #FF6EA7 ;
+  }
+
+  .graph-title {
+    padding: 0rem 2.2rem;
+    font-size: 1.71rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 28px;   
+  }
+  
+  .graph-date {
+    padding: 0rem 2.2rem;
+    font-size: 1rem;
+    font-family: ArialMT;
+    color: #FFFFFF;
+    line-height: 16px;
+  }
+
+  .transaction-tool-tips {
+    border: 2px solid;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 1);
+    border-color: rgba(255, 37, 123, 1);
+    color:white;
+  }
+
+  .transaction-tool-tips.place-top::after {
+    border: 0 solid #FF257B !important;
+  }
+
+  .transaction-graph-legend-1 {
+    display:block;
+    padding-left: 1rem;
+    width: 14px;
+    height: 14px;
+    background: #FFE2ED;
+    border-radius: 2px;
+  }
+  .transaction-graph-legend-2 {
+    display:block;
+    padding-left: 1rem;
+    width: 14px;
+    height: 14px;
+    background: #FFBAD6;
+    border-radius: 2px;
+  }
+  .transaction-graph-legend-3 {
+    display:block;
+    padding-left: 1rem;
+    width: 14px;
+    height: 14px;
+    background: #FF6EA7;
+    border-radius: 2px;
+  }
+  .transaction-graph-legend-4 {
+    display:block;
+    padding-left: 1rem;
+    width: 14px;
+    height: 14px;
+    background: #FF257B;
+    border-radius: 2px;
+  }
+}
+

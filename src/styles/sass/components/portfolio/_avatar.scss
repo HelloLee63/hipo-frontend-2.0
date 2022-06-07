@@ -1,0 +1,23 @@
+.avatar {
+  .wallet-address {
+    font-size: 1.71rem;
+    font-family: Montserrat-Bold, Montserrat;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 29px;
+  };
+
+  .avatar-lable {
+    display: flex;
+    padding: 0.6rem;
+    justify-content: start;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-family: Montserrat-Regular, Montserrat;
+
+    font-weight: 400;
+    line-height: 18px;
+    background: #232126;
+    border-radius: 8px;
+  }
+}

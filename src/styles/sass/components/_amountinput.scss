@@ -14,6 +14,12 @@
     -moz-appearance: textfield;
   }
 
+  input::placeholder {
+    color: #666666 !important;
+    // font-size: 1.2em;
+    // font-style: italic;
+  }
+
   $black: #000000;
   $cornflower-lilac: #ffaea9;
   $salmon: #ff7b73;

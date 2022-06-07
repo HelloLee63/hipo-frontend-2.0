@@ -97,8 +97,8 @@ const ProtocolDataProvider = ({ children }) => {
   }, [assets[3], collateralPools[2]])
 
   const getBondPrice = useCallback((
-    async (bondAsset, duration) => {
-      const priceData = await protocolDataContract.bondPriceArray?.find((obj) => 
+    (bondAsset, duration) => {
+      const priceData = protocolDataContract.bondPriceArray?.find((obj) => 
         obj.assetAddress === bondAsset && obj.duration === duration
       )      
       return priceData?.price

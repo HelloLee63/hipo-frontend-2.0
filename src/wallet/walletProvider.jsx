@@ -28,8 +28,6 @@ const Web3WalletProvider = props => {
 
   const { activeNetwork } = useNetwork();
 
-  console.log("Active Network is", activeNetwork);
-
   const web3React = useWeb3React();
   const [sessionProvider, setSessionProvider, removeSessionProvider] = useSessionStorage('wallet_provider') 
   const event = useMemo(() => new EventEmitter(), [])

@@ -25,8 +25,6 @@ export function useWeb3() {
 
 const Web3Provider = props => {
 
-  console.log('web3Provider is rendered');
-
     const { children } = props
     const { windowState } = useGeneral()
     const { activeNetwork, changeNetwork, findNetwork, findNetworkByChainId, defaultNetwork } = useNetwork()
@@ -37,6 +35,7 @@ const Web3Provider = props => {
 
     const [blockNumer, setBlockNumber] = useState()
     const [networkSelectVisible, showNetworkSelect] = useState(false)
+    
 
     const httpsWeb3 = useMemo(() => {
       let provider = CacheHttpsWeb3Provider[activeNetwork.rpc.httpsUrl]
@@ -183,7 +182,8 @@ const Web3Provider = props => {
     return (
       <Context.Provider value={value}>
         {children}
-        {networkSelectVisible && <SelectNetworkModal onCancel={() => showNetworkSelect(false)} />}        
+        {networkSelectVisible && <SelectNetworkModal onCancel={() => showNetworkSelect(false)} />}
+             
       </Context.Provider>
     )    
 }

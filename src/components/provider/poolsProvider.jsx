@@ -404,17 +404,17 @@ const PoolsProvider = ({ children }) => {
     {
       collateralAsset: usdcwethLpToken,
       underlyingAssets: [wethToken, usdcToken],
-      contract: cuUSDCWETH.contract
+      contract: cuUSDCWETH.contract,
     },
     {
       collateralAsset: wethusdtLpToken,
       underlyingAssets: [wethToken, usdtToken],
-      contract: cuWETHUSDT.contract
+      contract: cuWETHUSDT.contract,
     },
     {
       collateralAsset: daiwethLpToken,
       underlyingAssets: [wethToken, daiToken],
-      contract: cuDAIWETH.contract
+      contract: cuDAIWETH.contract,
     }
   ], [])
 

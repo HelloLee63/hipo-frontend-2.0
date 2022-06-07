@@ -1,4 +1,5 @@
 import { getHumanValue } from "../../../helpers/web3/utils"
+import { formatBigValue } from "../../../web3/utils"
 
 const AmountInput = ({ walletBalance, decimals, setAmount }) => {
 
@@ -21,7 +22,7 @@ const AmountInput = ({ walletBalance, decimals, setAmount }) => {
 
   function handleMax() {
     let value = getHumanValue(walletBalance, decimals)
-    document.getElementById("input-amount").value = value
+    document.getElementById("input-amount").value = formatBigValue(value)
     setAmount(() => value)
   }
   

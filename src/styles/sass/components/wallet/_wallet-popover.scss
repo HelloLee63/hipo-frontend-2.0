@@ -1,0 +1,60 @@
+.antd-popover {
+  .ant-popover-inner {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 24px;
+    background: rgba(0, 0, 0, 1);
+    background-clip: padding-box;
+    padding: 0px;
+    /* just to show box-shadow still works fine */
+    box-shadow: 0px 1px 2px 0px rgba(37, 37, 37, 0.15);
+    color:white;
+  }
+
+  .ant-popover-inner::after {
+    position: absolute;
+    top: -2px; 
+    bottom: -2px;
+    left: -2px; 
+    right: -2px;
+    background: linear-gradient(122deg, rgba(255, 37, 123, 1), rgba(103, 120, 238, 1));
+    content: '';
+    z-index: -1;
+    border-radius: 24px;
+  }
+
+  .ant-popover-content {
+    .ant-popover-arrow {
+      display: none;
+    }
+  }
+
+  .popver-title {
+    font-size: 1.29rem;
+    font-family: ArialMT;
+    color: #FFFFFF;
+    line-height: 21px;
+  }
+ 
+  .popover-divider {
+    border-top: 1px solid;
+    border-image: linear-gradient(122deg, rgba(255, 218, 232, 1), rgba(230, 229, 255, 1)) 1 1;
+  }
+
+
+  .popover-address {
+
+    font-size: 1.29rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 21px;
+
+    &:hover {
+      color: #FF257B;
+    }
+  }
+
+  
+}
+

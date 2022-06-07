@@ -1,0 +1,36 @@
+.portfolio-tablist {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.portfolio-tab:hover {
+  border-bottom: 2px solid #ff257c !important;
+  color: #FFFFFF !important;
+}
+
+.portfolio-tab {
+  padding: 0.6rem;
+  font-size: 1.14rem;
+  font-family: YuKyo_Yoko-Bold, YuKyo_Yoko;
+  font-weight: bold;
+  color: #C6C9DD;
+  line-height: 24px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.portfolio-tabs {
+  padding: 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.portfolio-tab-active {
+  border-bottom: 2px solid #ff257c !important;
+  border-top: null !important;
+  border-left: null !important;
+  border-right: null !important;
+  color: #FFFFFF !important;
+}
+
+li:focus {
+  outline: none;
+}

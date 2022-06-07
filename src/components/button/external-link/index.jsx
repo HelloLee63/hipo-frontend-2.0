@@ -15,6 +15,7 @@ const ExternalLink = ({
       rel='noopenner noreferrer'
       target="_blank"
       {...rest}
+      style={{color:"#FF2525"}}
       className="">
       <ButtonContent {...{ icon, iconPosition, iconRotate, children }} />
     </a>      

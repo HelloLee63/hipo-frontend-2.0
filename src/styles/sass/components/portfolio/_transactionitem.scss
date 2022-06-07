@@ -1,0 +1,38 @@
+.transaction-item {
+  // padding: 20px;
+  // margin: 20px;
+  
+  .transaction-item-title {
+
+    font-size: 1.14rem;
+    font-family: Arial-BoldMT, Arial;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 18px;
+  }
+
+  .transaction-item-date {
+
+    font-size: 0.86rem;
+    font-family: Montserrat-Regular, Montserrat;
+    font-weight: 400;
+    color: #C6C9DD;
+    line-height: 15px;
+  }
+
+  .transaction-item-description {
+
+    font-size: 1rem;
+    font-family: ArialMT;
+    color: #FFFFFF;
+    line-height: 16px;
+  }
+
+  .transaction-icon {
+    // padding: auto;
+    // width: 32px;
+    // height: 32px;
+    border-radius: 8px;
+    border: 2px solid #FF257B;
+  }
+}

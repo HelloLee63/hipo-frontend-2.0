@@ -1,0 +1,28 @@
+.card.transaction-link-card {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    border: 2px solid rgba(163, 149, 187, 0.4);
+
+    .transaction-link-text {
+      color: #C6C9DD;
+      font-size: 1.71rem;
+      font-family: ArialMT;
+      // color: #FFFFFF;
+      line-height: 28px;
+    }
+
+    &:hover {
+      border: 2px solid #FF257B;
+      color: #FFFFFF;
+      .transaction-link-text {
+        color: #FFFFFF;
+      }
+    }
+
+    &:active {
+      border: 2px solid #FF257B;
+      .transaction-link-text {
+        color: #FFFFFF;
+      }
+    }
+  }

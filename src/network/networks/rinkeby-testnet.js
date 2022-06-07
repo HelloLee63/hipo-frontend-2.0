@@ -1,7 +1,7 @@
 import { toHex } from 'web3-utils';
 import { isDevelopmentMode } from '../../helpers/utils';
 
-const RPC_KEY = !isDevelopmentMode ? '434ef1f8d25a495cab78aa7530dc4213' : '434ef1f8d25a495cab78aa7530dc4213';
+const RPC_KEY = !isDevelopmentMode ? '669a25b8cc384ca3b51c0b48e4c8ce61' : '669a25b8cc384ca3b51c0b48e4c8ce61';
 export const RPC_HTTPS_URL = `https://rinkeby.infura.io/v3/${RPC_KEY}`;
 const RPC_WSS_URL = `wss://rinkeby.infura.io/ws/v3${RPC_KEY}`;
 

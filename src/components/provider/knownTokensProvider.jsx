@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+
 import { createContext, useCallback, useContext, useMemo } from 'react';
 import { InvariantContext } from '../../helpers/context';
 import { useConfig } from '../../network/configProvider';
