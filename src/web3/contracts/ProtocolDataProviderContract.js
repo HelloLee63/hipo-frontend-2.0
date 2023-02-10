@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Web3Contract, { createAbiItem } from "../web3Contract"
 
 const ProtocolDataABI = [

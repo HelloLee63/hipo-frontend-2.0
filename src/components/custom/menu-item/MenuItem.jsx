@@ -10,7 +10,7 @@ const MenuItem = props => {
   
   return (
     <div className='menu-item me-lg-1'>  
-      <Link className={clsx('menu-item-custom menu-title-custom', {'menu-item-active': checkIsActive(pathname, to),})} to={to}>
+      <Link className={clsx('menu-item-custom menu-title-custom', {'menu-item-active': checkIsActive(pathname, to)})} to={to}>
         <SVG className='menu-svg' src={menuIcon} />
         <span className='ps-3'>{title}</span>
       </Link>

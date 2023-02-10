@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useContext, useEffect, useState, useMemo, useCallback } from "react";
 import Web3 from "web3";
 import EventEmitter from "wolfy87-eventemitter";
@@ -49,7 +50,7 @@ const Web3Provider = props => {
 
     const wssWeb3 = useMemo(() => {
       if (activeNetwork.rpc.wssUrl) {
-          return undefined
+        return undefined
       }
 
       const provider = new Web3.providers.WebsocketProvider(activeNetwork.rpc.wssUrl)
@@ -101,21 +102,21 @@ const Web3Provider = props => {
         let canSetNetwork = true
 
         if (wallet.connector instanceof MetamaskConnector && network.metamaskChain) {
-            try {
-                const error = await wallet.connector.switchChain({
-                    chainId: network.metamaskChain.chainId,
-                })
+          try {
+            const error = await wallet.connector.switchChain({
+              chainId: network.metamaskChain.chainId,
+            })
 
-                if(error) {
-                    await Promise.reject(error)
-                }
-            } catch (e) {
-                canSetNetwork = false
-
-                if (e.code === 4902 || e.message?.includes('Unrecognized chain ID')) {
-                    await wallet.connector.addChain(network.metamaskChain)
-                }                           
+            if(error) {
+              await Promise.reject(error)
             }
+          } catch (e) {
+              canSetNetwork = false
+
+              if (e.code === 4902 || e.message?.includes('Unrecognized chain ID')) {
+                await wallet.connector.addChain(network.metamaskChain)
+              }                           
+          }
         }
 
         if (canSetNetwork) {
@@ -183,7 +184,6 @@ const Web3Provider = props => {
       <Context.Provider value={value}>
         {children}
         {networkSelectVisible && <SelectNetworkModal onCancel={() => showNetworkSelect(false)} />}
-             
       </Context.Provider>
     )    
 }

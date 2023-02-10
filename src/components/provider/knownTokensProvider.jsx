@@ -1,4 +1,4 @@
-// eslint-disable-next-line
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import { createContext, useCallback, useContext, useMemo } from 'react';
 import { InvariantContext } from '../../helpers/context';

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useCallback, useContext, useMemo, useState } from "react"
 import { InvariantContext } from "../../helpers/context"
 import { useKnownTokens } from "./knownTokensProvider"

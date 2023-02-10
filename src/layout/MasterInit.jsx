@@ -1,10 +1,8 @@
 import {useEffect, useRef} from 'react'
 // import {
 //   // MenuComponent,
-//   // DrawerComponent,
 //   // ScrollComponent,
 //   // ScrollTopComponent,
-//   // StickyComponent,
 //   // ToggleComponent,
 // } from '../assets/ts/components'
 import { DrawerComponent, StickyComponent } from '../_metronic/assets/js/components'

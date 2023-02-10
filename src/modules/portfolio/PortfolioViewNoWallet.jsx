@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import RatesTable from "../../components/custom/rates-table/RatesTable"
 import { usePools } from "../../components/provider/poolsProvider"
 import SupportedAssetsCard from "./components/supported-assets-card/SupportedAssetsCard"
@@ -69,14 +70,14 @@ const PortfolioViewNoWallet = () => {
       <div className="pt-5 d-flex flex-column">
         <TransactionLink icon={links.pledge.icon} linkContent={links.pledge.text} to={links.pledge.to}/>
       </div>
-      <div className='row align-items-start gy-5 g-xl-8 pt-5 justify-content-center'>        
+      {/* <div className='row align-items-start gy-5 g-xl-8 pt-5 justify-content-center'>        
         <div className='col-md-7'>          
           <SupportedAssetsCard title='Supported Collaterals' assets={portfolioAssets.collaterals} />                    
         </div>
         <div className='col-md-5 align-self-center'>
           <SupportedAssetsCard title='Supported Assets' assets={portfolioAssets.assets} />
         </div>                        
-      </div>
+      </div> */}
 
       <div className="pt-15 portfolio-view-no-wallet-title">
         {pageTexts.content2.title}

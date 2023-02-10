@@ -8,7 +8,7 @@ import { Header } from './Header'
 
 export function HeaderWrapper() {
   const {config, classes, attributes} = useLayout()
-  const {header, aside} = config
+  const {header} = config
 
   return (
     <div
@@ -20,19 +20,6 @@ export function HeaderWrapper() {
       {...attributes.headerMenu}
     >
       <div className={clsx(classes.headerContainer.join(' '), 'd-flex align-items-center')}>
-        {/* begin::Aside mobile toggle */}
-        {aside.display && (
-          <div className='d-flex align-items-center d-lg-none ms-n3 me-1' title='Show aside menu'>
-            <div
-              className='btn btn-icon btn-active-light-primary btn-custom w-30px h-30px w-md-40px h-md-40px'
-              id='kt_aside_mobile_toggle'
-            >
-              <img alt='' src='/media/icons/abs015.svg' className='svg-icon-2x mt-1' />
-            </div>
-          </div>
-        )}
-        {/* end::Aside mobile toggle */}
-
         <div
           className='d-flex topbar align-items-center d-lg-none ms-n2 me-3'
           title='Show aside menu'
@@ -44,35 +31,26 @@ export function HeaderWrapper() {
             <img alt='' src='/media/icons/abs015.svg' className='svg-icon-2x' />
           </div>
         </div>
-
-        {/* logo start*/}
+        
         <div className='header-logo me-5 me-md-10 flex-grow-1 flex-lg-grow-0'>
           <Link to='/'>
             <img
               alt='Logo'
               src={toAbsoluteUrl('/media/logos/logo.svg')}
-              className='logo-default h-30px'
+              className='logo-default h-35px'
             />
             <img
               alt='Logo'
               src={toAbsoluteUrl('/media/logos/logo.svg')}
-              className='logo-sticky h-30px'
+              className='logo-sticky h-35px'
             />
           </Link>
         </div>
-        {/* logo end*/}
-
-        <div className='d-flex align-items-stretch justify-content-between flex-lg-grow-1'>
-          {/* begin::Navbar */}
+        
+        <div className='d-flex align-items-stretch justify-content-between flex-lg-grow-1'>          
           {header.left === 'menu' && (
             <div className='d-flex align-items-stretch' id='kt_header_nav'>
               <Header />
-            </div>
-          )}
-
-          {header.left === 'page-title' && (
-            <div className='d-flex align-items-center' id='kt_header_nav'>
-              {/* <DefaultTitle /> */}
             </div>
           )}
 

@@ -12,6 +12,7 @@ const MasterLayout = () => {
     <PageDataProvider>
       <div className='page d-flex flex-row flex-column-fluid'>
         <div className='wrapper d-flex flex-column flex-row-fluid' id='kt_wrapper'>
+
           <HeaderWrapper />
 
           <div id='kt_content' className='content d-flex flex-column flex-column-fluid'>
@@ -27,7 +28,8 @@ const MasterLayout = () => {
                 <Outlet />
               </Content>
             </div>
-          </div>          
+          </div>
+                   
         </div>        
       </div>      
     </PageDataProvider>

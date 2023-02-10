@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useCallback, useContext, useEffect } from "react";
 import { usePools } from "../../../components/provider/poolsProvider";
 import { useReload } from "../../../hooks/useReload";

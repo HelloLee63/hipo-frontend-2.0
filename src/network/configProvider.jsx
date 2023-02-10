@@ -15,7 +15,7 @@ const ConfigProvider = props => {
     
     const config = activeNetwork.config
     const value = {
-        ...activeNetwork.config,
+        ...config,
         links: {
             website: 'https://www.hipo.one',
             discord: '',

@@ -5,52 +5,48 @@
 
 // Base
 .topbar {
-  // // Fixed header & NON sticky header modes
-  // body:not([data-kt-sticky-header='on']) & {
-  //   // Buttons
-    .btn-network {
-      @include button-custom-variant(
-        $color: #fff,
-        $icon-color: #fff,
-        $border-color: #423D58,
-        $bg-color: #171717,
-        $color-active: #FF257B,
-        $icon-color-active: #fff,
-        $border-color-active: null,
-        $bg-color-active: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%)
-      );
-      width: 12.2rem;
-      height: 3rem;
-      font-family: Arial-BoldMT, Arial;
-      font-size: 1rem;
-      font-weight: normal;
-      line-height: 16px;
-      height: 3rem;
-      border-radius: 8px;
-      border: 2px solid #423D58 !important;
-      // transition: 5s;
-      line-height: 21px;
-      transition: all 0.2s;
-      -webkit-transition: all 0.2s;
+  .btn-network {
+    @include button-custom-variant(
+      $color: #fff,
+      $icon-color: #fff,
+      $border-color: #423D58,
+      $bg-color: #171717,
+      $color-active: #FF257B,
+      $icon-color-active: #fff,
+      $border-color-active: null,
+      $bg-color-active: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%)
+    );
+    width: 12.2rem;
+    height: 3rem;
+    font-family: Arial-BoldMT, Arial;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 16px;
+    height: 3rem;
+    border-radius: 8px;
+    border: 2px solid #423D58 !important;
+    // transition: 5s;
+    line-height: 21px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
 
-      &:hover {
-        background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
-      }
-
-      &:active {
-        background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
-        transform: scale(0.9);
-      }
+    &:hover {
+      background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
     }
 
-    // Fixed header & NON sticky search modes
-    .active.show > .btn.btn-network {
-      color: #666666;
-      // background-color: rgba(#fff, 0.2) !important;
-      background-color:linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
-      i,
-      .svg-icon {
-        color: #fff;
-      }
+    &:active {
+      background: linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
+      transform: scale(0.9);
     }
   }
+
+  // Fixed header & NON sticky search modes
+  .active.show > .btn.btn-network {
+    color: #666666;
+    background-color:linear-gradient(90deg, #FFDAE8 0%, #E6E5FF 100%);
+    i,
+    .svg-icon {
+      color: #fff;
+    }
+  }
+}

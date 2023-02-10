@@ -17,8 +17,6 @@
 }
 
 .menu-item-active {
-  // border-radius: 5px;  
-  // background-color: #171717;
   color: #ffffff;
   border-bottom: 2px solid #ff257c;
 }
@@ -26,12 +24,7 @@
 .menu-title-custom {
   display: flex;
   align-items: center;
-  // color: #D5D7E4;
-  font-family: YuKyokasho Yoko Bold;
+  font-family: 'Noto Sans', sans-serif;
   font-size: 1.15rem;
-  font-weight: bold;
-}
-
-.menu-title-custom:link {
-  text-decoration: none;
+  font-weight: 600;
 }

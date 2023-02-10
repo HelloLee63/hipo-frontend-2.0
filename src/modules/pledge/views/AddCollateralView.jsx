@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import BigNumber from "bignumber.js"
 import { useEffect, useMemo, useState } from "react"
 import TransactionFormCard from "../../../components/custom/transaction-form-card/TransactionFormCard"
